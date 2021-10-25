@@ -6,6 +6,8 @@ class Unidades extends BaseController
 {
     public function index()
     {
-        return view('plantilla/tables');
+        echo view('plantilla/cabecera');
+		echo view('plantilla/tables');
+		echo view('plantilla/pie');
     }
 }
