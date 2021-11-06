@@ -6,7 +6,7 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                Unidades de medida de los productos.
+                                <a href="<?=base_url()?>/public/Unidades/nuevo" class="btn btn-primary">Añadir</a>
                             </div>
                         </div>
                         <div class="card mb-4">

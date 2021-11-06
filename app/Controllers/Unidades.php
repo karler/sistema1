@@ -11,7 +11,6 @@ class Unidades extends BaseController
 	
 	public function __construct(){
             $this->unidades = new UnidadesModel();
-
         }
 	
     public function index($activo = 1)
@@ -25,4 +24,23 @@ class Unidades extends BaseController
 		echo view('unidades/unidades',$data);
 		echo view('plantilla/pie');
     }
+	
+	public function nuevo(){
+		$data = [
+			'titulo' => 'Nuevas Unidades'
+		];
+		echo view('plantilla/cabecera');
+		echo view('unidades/nuevo',$data);
+		echo view('plantilla/pie');
+	}
+	
+	public function guardar(){
+		$valores = [
+			'nombre' => $this->request->getPost('nombre'),
+			'nombre_corto' => $this->request->getPost('nombre_corto'),
+			'activo' => 1
+		];
+		$this->unidades->insert($valores);
+		return redirect()->to(base_url()."/public/Unidades");
+	}
 }
