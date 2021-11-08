@@ -32,8 +32,10 @@
 												echo "<td>{$fila['idunidad']}</td>";
 												echo "<td>".$fila['nombre']."</td>";
 												echo "<td>".$fila['nombre_corto']."</td>";
-												echo "<td>Editar</td>";
-												echo "<td>Eliminar</td>";
+												$ruta1 = base_url()."/public/Unidades/editar/".$fila['idunidad'];
+												echo "<td><a class ='btn btn-success' href='$ruta1'>Editar</a></td>";
+												$ruta2 = base_url()."/public/Unidades/eliminar/".$fila['idunidad'];
+												echo "<td><a class ='btn btn-danger' href='$ruta2'><i class='fas fa-trash-alt'></i> Eliminar</a></td>";
 												echo "</tr>";
 											}
 										?>
