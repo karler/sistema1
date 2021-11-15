@@ -1,6 +1,6 @@
                         <h1 class="mt-4"><?=$titulo?></h1>
                         <ol class="breadcrumb mb-4">
-                        	<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        	<li class="breadcrumb-item"><a href="<?=base_url()?>/public/Unidades">Dashboard</a></li>
                         	<li class="breadcrumb-item active"><?=$titulo?></li>
                         </ol>
                         <div class="card mb-4">

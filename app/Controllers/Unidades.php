@@ -72,4 +72,24 @@ class Unidades extends BaseController
 		$this->unidades->update($id, $valores);
 		return redirect()->to(base_url()."/public/Unidades");
 	}
+	
+	public function eliminados($activo = 0)
+    {
+		$resultado = $this->unidades->where('activo',$activo)->findAll();
+            $data = [ 
+                'titulo' => 'Unidades Eliminadas',
+                'datos' => $resultado
+            ];
+        echo view('plantilla/cabecera');
+		echo view('unidades/eliminados',$data);
+		echo view('plantilla/pie');
+    }
+	
+	public function restaurar($id){
+		$valores = [
+			'activo' => 1
+		];
+		$this->unidades->update($id, $valores);
+		return redirect()->to(base_url()."/public/Unidades");
+	}
 }

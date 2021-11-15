@@ -6,8 +6,7 @@
                         </ol>
                         <div class="card mb-4">
                             <div class="card-body">
-                                <a href="<?=base_url()?>/public/Unidades/nuevo" class="btn btn-primary">Añadir</a>
-								<a href="<?=base_url()?>/public/Unidades/eliminados" class="btn btn-danger">Ver Eliminados</a>
+								<a href="<?=base_url()?>/public/Unidades" class="btn btn-primary">Regresar</a>
                             </div>
                         </div>
                         <div class="card mb-4">
@@ -22,8 +21,7 @@
                                             <th>Id Unidad</th>
                                             <th>Nombre</th>
                                             <th>Nombre Corto</th>
-                                            <th>Editar</th>
-                                            <th>Eliminar</th>
+                                            <th>Restaurar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,10 +31,9 @@
 												echo "<td>{$fila['idunidad']}</td>";
 												echo "<td>".$fila['nombre']."</td>";
 												echo "<td>".$fila['nombre_corto']."</td>";
-												$ruta1 = base_url()."/public/Unidades/editar/".$fila['idunidad'];
-												echo "<td><a class ='btn btn-success' href='$ruta1'>Editar</a></td>";
-												$ruta2 = base_url()."/public/Unidades/eliminar/".$fila['idunidad'];
-												echo "<td><a class ='btn btn-danger' href='$ruta2'><i class='fas fa-trash-alt'></i> Eliminar</a></td>";
+												
+												$ruta2 = base_url()."/public/Unidades/restaurar/".$fila['idunidad'];
+												echo "<td><a class ='btn btn-success' href='$ruta2'><i class='fas fa-trash-restore'></i> Restaurar</a></td>";
 												echo "</tr>";
 											}
 										?>
