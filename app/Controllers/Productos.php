@@ -3,13 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\ProductosModel;
+use App\Models\UnidadesModel;
+use App\Models\CategoriasModel;
 
 class Productos extends BaseController
 {
 	protected $productos;
+	protected $unidades;
+	protected $categorias;
 	
 	public function __construct(){
-            $this->productos = new ProductosModel();
+		$this->productos = new ProductosModel();
+		$this->unidades = new UnidadesModel();
+		$this->categorias = new CategoriasModel();
     }
 	
     public function index($activo = 1)
@@ -25,8 +31,12 @@ class Productos extends BaseController
     }
 	
 	public function nuevo(){
+		$bdunidades = $this->unidades->where('activo',1)->findAll();
+		$bdcategorias = $this->categorias->where('activo',1)->findAll();
 		$data = [
-			'titulo' => 'Nuevos Productos'
+			'titulo' => 'Nuevos Productos',
+			'unidades' => $bdunidades,
+			'categorias' => $bdcategorias
 		];
 		echo view('plantilla/cabecera');
 		echo view('productos/nuevo',$data);
@@ -52,9 +62,13 @@ class Productos extends BaseController
 	
 	public function editar($id){
 		$resultado = $this->productos->where('idproducto',$id)->first();
+		$bdunidades = $this->unidades->where('activo',1)->findAll();
+		$bdcategorias = $this->categorias->where('activo',1)->findAll();
 		$data = [
 			'titulo'=> 'Productos - Editar',
-			'datos' => $resultado
+			'datos' => $resultado,
+			'unidades' => $bdunidades,
+			'categorias' => $bdcategorias
 		];
 		echo view('plantilla/cabecera');
 		echo view('productos/editar',$data);

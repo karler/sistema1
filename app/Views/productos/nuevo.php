@@ -36,18 +36,46 @@
 									  <input id="nombre" name="nombre" type="text" class="form-control">
 									</div>
 								  </div>
+									
+									
+									
+									
+									
 								  <div class="form-group row">
 									<label for="idunidad" class="col-4 col-form-label">Unidad</label> 
 									<div class="col-8">
-									  <input id="idunidad" name="idunidad" type="text" class="form-control">
+									  <select id="idunidad" name="idunidad" class="custom-select">
+		<?PHP
+			foreach($unidades as $unidad){
+				echo "<option value='".$unidad['idunidad']."'>".$unidad['nombre']."</option>";
+			}
+		?>
+										 
+
+									  </select>
 									</div>
-								  </div>
+								  </div> 
+									
+									
+									
+									
 								  <div class="form-group row">
 									<label for="idcategoria" class="col-4 col-form-label">Categoría</label> 
 									<div class="col-8">
-									  <input id="idcategoria" name="idcategoria" type="text" class="form-control">
+									  <select id="idcategoria" name="idcategoria" class="custom-select">
+		<?PHP
+			foreach($categorias as $categoria){
+				echo "<option value='".$categoria['idcategoria']."'>".$categoria['categoria']."</option>";
+			}
+		?>					 
+									  </select>
 									</div>
-								  </div>
+								  </div> 
+									
+									
+									
+									
+									
 								  <div class="form-group row">
 									<label for="precio_venta" class="col-4 col-form-label">Precio de Venta</label> 
 									<div class="col-8">

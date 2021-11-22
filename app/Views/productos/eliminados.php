@@ -18,16 +18,15 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Id Producto</th>
+                                            <th>Id</th>
                                             <th>Código</th>
                                             <th>Nombre</th>
-                                            <th>Unidad</th>
-                                            <th>Categoría</th>
+                                            
 											<th>P. Venta</th>
                                             <th>P. Compra</th>
-											<th>Existencias</th>
-											<th>Stock Min./th>
-                                            <th>Inventariable</th>
+											<th>Cant.</th>
+											<th>Stock Min.</th>
+                                            <th>Invent.</th>
 											<th>Restaurar</th>
                                         </tr>
                                     </thead>
@@ -38,8 +37,7 @@
 												echo "<td>{$fila['idproducto']}</td>";
 												echo "<td>".$fila['codigo']."</td>";
 												echo "<td>".$fila['nombre']."</td>";
-												echo "<td>".$fila['idunidad']."</td>";
-												echo "<td>".$fila['idcategoria']."</td>";
+
 												echo "<td>".$fila['precio_venta']."</td>";
 												echo "<td>".$fila['precio_compra']."</td>";
 												echo "<td>".$fila['existencias']."</td>";
