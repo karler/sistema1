@@ -56,7 +56,7 @@
                             </a>
                             
                             <div class="sb-sidenav-menu-heading">PRODUCTOS</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="<?=base_url()?>/public/Productos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Productos
                             </a>
@@ -64,7 +64,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Unidades
                             </a>
-							<a class="nav-link" href="">
+							<a class="nav-link" href="<?=base_url()?>/public/Categorias">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Categorías
                             </a>
